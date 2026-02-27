@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-navy: #0D1F40;
+  --color-blue-primary: #1458D6;
+  --color-blue-sky: #3B82F6;
+  --color-gold: #F5A623;
+  --color-cream: #FDFCFB;
+  --color-border-subtle: rgba(13, 31, 64, 0.06);
+}
+
+@layer base {
+  body {
+    @apply font-sans text-navy bg-white antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 py-20 md:py-32;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-primary text-white px-7 py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 transition-all hover:bg-navy hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  .btn-gold {
+    @apply bg-gold text-navy px-7 py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 transition-all hover:opacity-90 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0;
+  }
+  
+  .btn-outline {
+    @apply border border-navy/20 text-navy px-7 py-3.5 rounded-xl font-bold flex items-center justify-center gap-2 transition-all hover:border-navy hover:bg-navy/5 hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .card-modern {
+    @apply bg-white border border-border-subtle rounded-[2rem] p-8 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-primary/5 hover:-translate-y-1;
+  }
+}
